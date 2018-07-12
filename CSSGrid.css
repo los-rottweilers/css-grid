@@ -1,0 +1,45 @@
+﻿.container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 50px 1fr 30px 30px;
+	grid-template-areas: "head" "nav" "main" "foot";
+	height: 300px;
+	width: 100%;
+}
+
+.container > header {
+	grid-area: head;
+	background-color: #8ca0ff;
+}
+
+
+.container > nav {
+	grid-area: nav;
+	background-color: #ffa08c;
+}
+
+
+.container > main {
+	grid-area: main;
+	background-color: #ffff64;
+}
+
+.container > footer {
+	grid-area: foot;
+	background-color: #8cffa0;
+}
+
+@media screen and (min-width: 720px) {
+	.container { grid-template-areas: "head head" "nav main" "nav foot"; grid-template-columns: 1fr 1fr; grid-template-rows: 50px 1fr 30px}
+	.container > header {grid-area:head}
+	.container > nav {grid-area: nav}
+	.container > main {grid-area: main}
+	.container > footer {grid-area: foot}
+}	
+
+@media screen and (min-width: 1020px) {
+	.container > header {grid-area:foot}
+	.container > nav {grid-area: nav}
+	.container > main {grid-area: main}
+	.container > footer {grid-area: head}
+}
